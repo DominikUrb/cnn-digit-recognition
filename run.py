@@ -32,8 +32,10 @@ W celu nawigacji wprowadz odpowiednia cyfre.
     """
     write_and_print(control_message)
     user_input = input()
+    write_and_print(user_input)
     while user_input not in ("1", "2", "3", "q"):
         user_input = input()
+        write_and_print(user_input)
 
     return user_input
 
@@ -47,6 +49,7 @@ Aby dokonac pomiaru dokladnosci wytrenowanego modelu podaj nazwe wybranego model
     """
     write_and_print(model_name_message)
     model_name = input()
+    write_and_print(model_name)
 
     if not model_name.endswith('.pkl') and model_name != 'q' and model_name != '':
         model_name += '.pkl'
@@ -78,6 +81,7 @@ Aby dokonac klasyfikacji obrazu podaj nazwe wybranego modelu sposrod dostepnych:
     """
     write_and_print(model_name_message)
     model_name = input()
+    write_and_print(model_name)
 
     if not model_name.endswith('.pkl') and model_name != 'q':
         model_name += '.pkl'
@@ -96,6 +100,7 @@ Podaj sciezke do obrazu w formacie '.jpg' ze znakiem, ktory chcesz poddac klasyf
             try:
                 write_and_print(path_to_image_message)
                 path_to_image = input()
+                write_and_print(path_to_image)
                 if path_to_image == 'q':
                     return main()
                 if not isfile(path_to_image) or not path_to_image.endswith('.jpg'):
@@ -117,6 +122,7 @@ Aby wytrenowac nowy model oparty o siec CNN wprowadz jego nazwe.
     """
     write_and_print(model_name_message)
     model_name = input()
+    write_and_print(model_name)
 
     if not model_name.endswith('.pkl') and model_name != 'q':
         model_name += '.pkl'
@@ -161,6 +167,7 @@ def get_int_input(message, min_value=None, max_value=None):
         try:
             write_and_print(message)
             v = input()
+            write_and_print(v)
             if v == 'q':
                 return 'q'
 

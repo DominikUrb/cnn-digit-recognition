@@ -70,9 +70,9 @@ def train_model(save_path, test_data_q=10000, train_data_q=50000, num_epochs=2):
 
     write_and_print("----------------------")
     write_and_print("Rozklad wartosci predykcji")
-    write_and_print("[wynik klasyfikacji]     [% wystapien]")
+    write_and_print("[wynik klasyfikacji]     [% prawidłowych klasyfikacji]")
     for i in range(0, 10):
-        write_and_print(f"{i}                         {digit_recall[i]}")
+        write_and_print(f"{i}                         {digit_recall[i] * 100}")
 
     # plt.xlabel('Digits')
     # plt.ylabel('Recall')

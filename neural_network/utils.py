@@ -115,8 +115,10 @@ def prepare_image(path_to_image):
 
 
 def write_and_print(text):
+    if type(text) != str:
+        text = f"{text}"
     f = open("out.txt", "a")
-    f.write(text)
+    f.write(text + "\n")
     print(text)
 
 
