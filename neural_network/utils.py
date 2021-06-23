@@ -135,37 +135,37 @@ def download_test_datasets():
                                        "dataset/t10k-images-idx3-ubyte.gz")
             write_and_print("Pobrano t10k-images-idx3-ubyte.gz")
         except HTTPError as e:
-            write_and_print(f"Pobieranie nieudane, serwer zwrócił błąd: {e}")
+            write_and_print(f"Pobieranie nieudane, serwer zwrocil blad: {e}")
             time.sleep(1)
 
     while not os.path.isfile("dataset/t10k-labels-idx1-ubyte.gz"):
-        write_and_print("Rozpoczęto pobieranie t10k-labels-idx1-ubyte.gz")
+        write_and_print("Rozpoczeto pobieranie t10k-labels-idx1-ubyte.gz")
         try:
             urllib.request.urlretrieve("http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz",
                                        "dataset/t10k-labels-idx1-ubyte.gz")
             write_and_print("Pobrano t10k-labels-idx1-ubyte.gz")
         except HTTPError as e:
-            write_and_print(f"Pobieranie nieudane, serwer zwrócił błąd: {e}")
+            write_and_print(f"Pobieranie nieudane, serwer zwrocil blad: {e}")
             time.sleep(1)
 
 
 def download_train_datasets():
     while not os.path.isfile("dataset/train-images-idx3-ubyte.gz"):
-        write_and_print("Rozpoczęto pobieranie train-images-idx3-ubyte.gz")
+        write_and_print("Rozpoczeto pobieranie train-images-idx3-ubyte.gz")
         try:
             urllib.request.urlretrieve("http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz",
                                    "dataset/train-images-idx3-ubyte.gz")
             write_and_print("Pobrano train-images-idx3-ubyte.gz")
         except HTTPError as e:
-            write_and_print(f"Pobieranie nieudane, serwer zwrócił błąd: {e}")
+            write_and_print(f"Pobieranie nieudane, serwer zwrocil blad: {e}")
             time.sleep(1)
 
     while not os.path.isfile("dataset/train-labels-idx1-ubyte.gz"):
-        write_and_print("Rozpoczęto pobieranie train-labels-idx1-ubyte.gz")
+        write_and_print("Rozpoczeto pobieranie train-labels-idx1-ubyte.gz")
         try:
             urllib.request.urlretrieve("http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz",
                                    "dataset/train-labels-idx1-ubyte.gz")
             write_and_print("Pobrano train-labels-idx1-ubyte.gz")
         except HTTPError as e:
-            write_and_print(f"Pobieranie nieudane, serwer zwrócił błąd: {e}")
+            write_and_print(f"Pobieranie nieudane, serwer zwrocil blad: {e}")
             time.sleep(1)

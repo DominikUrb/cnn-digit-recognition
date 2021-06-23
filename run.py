@@ -104,13 +104,13 @@ Podaj sciezke do obrazu w formacie '.jpg' ze znakiem, ktory chcesz poddac klasyf
                 if path_to_image == 'q':
                     return main()
                 if not isfile(path_to_image) or not path_to_image.endswith('.jpg'):
-                    write_and_print("Wskazany adres jest nieprawidłowy")
+                    write_and_print("Wskazany adres jest nieprawidlowy")
                     continue
                 classify_image(f"models_parameters/{model_name}", path_to_image)
                 found_image_by_path = True
                 return main()
             except:
-                write_and_print("Wskazany adres jest nieprawidłowy")
+                write_and_print("Wskazany adres jest nieprawidlowy")
 
 
 def train_model_input():
