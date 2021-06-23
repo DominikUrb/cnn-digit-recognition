@@ -11,6 +11,14 @@ from neural_network.forward import *
 from settings import IMAGE_BINARY_FILE_NAME
 
 
+def gzip_file(path):
+    f_in = open(path, 'rb')
+    f_out = gzip.open(f'{path}.gz', 'w+')
+    f_out.writelines(f_in)
+    f_out.close()
+    f_in.close()
+
+
 def extract_data(filename, num_images, IMAGE_WIDTH):
     with gzip.open(filename) as bytestream:
         bytestream.read(16)
@@ -110,8 +118,8 @@ def prepare_image(path_to_image):
     data_image.tofile(output_file)
     output_file.close()
 
-    os.system(f'rm dataset/{IMAGE_BINARY_FILE_NAME}-images-idx3-ubyte.gz')
-    os.system(f'gzip dataset/{IMAGE_BINARY_FILE_NAME}-images-idx3-ubyte')
+    os.remove(f'dataset/{IMAGE_BINARY_FILE_NAME}-images-idx3-ubyte.gz')
+    gzip_file(f'dataset/{IMAGE_BINARY_FILE_NAME}-images-idx3-ubyte')
 
 
 def write_and_print(text):
